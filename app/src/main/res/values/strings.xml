@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Chameleon Cards</string>
+    <string name="welcome">Welcome to Chameleon Cards!</string>
+    <string name="menu_open">Menu Open</string>
+    <string name="menu_close">Menu Close</string>
+    <string name="new_card">Create a new card!</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/new_card"
+            android:title="New Card"/>
+
+        <item android:id="@+id/your_cards"
+            android:title="Your Cards"/>
+
+        <item android:id="@+id/drafts"
+            android:title="Drafts"/>
+
+        <item android:id="@+id/logout"
+            android:title="Logout"/>
+
+    </group>
+
+</menu>

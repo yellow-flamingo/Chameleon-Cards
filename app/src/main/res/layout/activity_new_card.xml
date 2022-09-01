@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewCard">
+
+    <TextView
+        android:id="@+id/new_card_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/new_card"
+        android:textStyle="bold"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_background"
+        android:layout_width="150dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/new_card_text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="90dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="20dp">
+
+        <ImageView
+            android:id="@+id/card"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/new_card_text"
+            android:scaleType="fitXY"
+            android:src="@drawable/pattern_1"/>
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="To:"/>
+
+        <TextView
+            android:id="@+id/receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="10dp"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Happy Birthday!"/>
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="From:"/>
+
+        <TextView
+            android:id="@+id/sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="49dp"
+            android:layout_marginBottom="10dp"
+            android:text=""/>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/choose_background_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_below="@+id/new_card_text"
+        android:layout_toRightOf="@+id/card_background"
+        android:layout_marginLeft="30dp"
+        android:text="Choose Background"
+        android:textStyle="bold"/>
+
+
+    <RadioGroup
+        android:id="@+id/choose_background_group"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choose_background_text"
+        android:layout_marginTop="30dp">
+
+        <RadioButton
+            android:id="@+id/background_option_1_radio"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/pattern_1"
+            android:onClick="onCardBackgroundSelected"
+            android:button="@null"
+            android:layout_marginLeft="200dp"/>
+
+        <RadioButton
+            android:id="@+id/background_option_2_radio"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/pattern_2"
+            android:onClick="onCardBackgroundSelected"
+            android:button="@null"
+            android:layout_marginLeft="10dp"/>
+
+        <RadioButton
+            android:id="@+id/background_option_3_radio"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/pattern_3"
+            android:onClick="onCardBackgroundSelected"
+            android:button="@null"
+            android:layout_marginLeft="10dp"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/download_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choose_background_group"
+        android:layout_toRightOf="@id/card_background"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Download Background"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/download_text"
+        android:layout_toRightOf="@id/card_background"
+        android:layout_marginLeft="30dp"
+        android:text="Edit Text"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/to_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@id/card_background"
+        android:layout_marginLeft="30dp"
+        android:text="To:"/>
+
+    <EditText
+        android:id="@+id/edit_receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_text"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/to_text" />
+
+
+    <TextView
+        android:id="@+id/message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to_text"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@id/card_background"
+        android:layout_marginLeft="30dp"
+        android:text="Message:"/>
+
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_receiver"
+        android:layout_toRightOf="@id/message_text"
+        android:layout_marginLeft="20dp"/>
+
+
+    <TextView
+        android:id="@+id/from_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/message_text"
+        android:layout_marginTop="28dp"
+        android:layout_toRightOf="@id/card_background"
+        android:layout_marginLeft="30dp"
+        android:text="From:"/>
+
+    <EditText
+        android:id="@+id/edit_sender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_message"
+        android:layout_toRightOf="@id/from_text"
+        android:layout_marginLeft="20dp"/>
+
+
+    <ImageButton
+        android:id="@+id/save_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_background"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="75dp"
+        android:src="@drawable/ic_baseline_cloud_download_24"
+        android:background="@color/white"/>
+
+    <ImageButton
+        android:id="@+id/save_card_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_background"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="320dp"
+        android:src="@drawable/ic_baseline_check_24"
+        android:background="@color/white"/>
+
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choose_background_group"
+        android:layout_toRightOf="@id/download_text"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/ic_baseline_search_24"
+        android:background="@color/white"/>
+
+</RelativeLayout>
