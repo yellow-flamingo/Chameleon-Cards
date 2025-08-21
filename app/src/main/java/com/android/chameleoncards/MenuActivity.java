@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,20 +43,18 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
-        switch (item.getItemId()) {
-            case R.id.logout:
-                preferenceManager.setString("user_logged_in", null);
-                preferenceManager.setString("user_password", null);
-                startActivity(new Intent(this, MainActivity.class));
-                overridePendingTransition(0, 0);
-                break;
-            case R.id.new_card:
-                startActivity(new Intent(this, NewCard.class));
-                overridePendingTransition(0, 0);
-                break;
-            case R.id.your_cards:
-                startActivity(new Intent(this, YourCardsActivity.class));
-                overridePendingTransition(0, 0);
+        int itemID = item.getItemId();
+
+        if (itemID == R.id.logout) {
+            preferenceManager.setString("user_logged_in", null);
+            preferenceManager.setString("user_password", null);
+            startActivity(new Intent(this, MainActivity.class));
+            overridePendingTransition(0, 0);
+        } else if (itemID == R.id.new_card) {
+            startActivity(new Intent(this, NewCard.class));
+            overridePendingTransition(0, 0);
+        } else if (itemID == R.id.your_cards) {
+            startActivity(new Intent(this, YourCardsActivity.class));
         }
         return false;
     }

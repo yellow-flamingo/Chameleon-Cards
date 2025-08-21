@@ -173,16 +173,14 @@ public class NewCard extends MenuActivity {
 
     public void onCardBackgroundSelected(View view) {
         RadioGroup radioGroup = findViewById(R.id.choose_background_group);
-        switch (radioGroup.getCheckedRadioButtonId()) {
-            case R.id.background_option_1_radio:
-                card.setImageResource(R.drawable.pattern_1);
-                break;
-            case R.id.background_option_2_radio:
-                card.setImageResource(R.drawable.pattern_2);
-                break;
-            case R.id.background_option_3_radio:
-                card.setImageResource(R.drawable.pattern_3);
-                break;
+        int buttonID = radioGroup.getCheckedRadioButtonId();
+
+        if (buttonID == R.id.background_option_1_radio) {
+            card.setImageResource(R.drawable.pattern_1);
+        } else if (buttonID == R.id.background_option_2_radio) {
+            card.setImageResource(R.drawable.pattern_2);
+        } else if (buttonID == R.id.background_option_3_radio) {
+            card.setImageResource(R.drawable.pattern_3);
         }
     }
 
